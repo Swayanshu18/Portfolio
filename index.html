@@ -834,15 +834,7 @@
                 <p class="project-category">Virtual Reality</p>
               </a>
             </li>
-            <div id="videoModal" class="video-modal">
-              <div class="video-content">
-                <span class="close-btn">&times;</span>
-                <video id="projectVideo" controls autoplay>
-                  <source src="./assets/images/mahal.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
+    
             <li class="project-item active" data-filter-item data-category="virtual reality">
               <a href="#">
                 <figure class="project-img">
@@ -855,15 +847,7 @@
                 <p class="project-category">Virtual Reality</p>
               </a>
             </li>
-            <div id="videoModal" class="video-modal">
-              <div class="video-content">
-                <span class="close-btn">&times;</span>
-                <video id="projectVideo" controls autoplay>
-                  <source src="./assets/images/crying.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
+           
             <li class="project-item active" data-filter-item data-category="virtual reality">
               <a href="#">
                 <figure class="project-img">
@@ -1226,46 +1210,38 @@
       <!--
         - #CONTACT
       -->
-
       <article class="contact" data-page="contact">
-
         <header>
-          <h2 class="h2 article-title">Contact</h2>
+            <h2 class="h2 article-title">Contact</h2>
         </header>
-      
+    
         <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.878828614319!2d81.50676417621668!3d26.265595777038953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399ba1580bf13c33%3A0x32df0c8e914ab52e!2sRajiv%20Gandhi%20Institute%20of%20Petroleum%20Technology%20(RGIPT)!5e0!3m2!1sen!2sin!4v1730142155014!5m2!1sen!2sin"
-              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </figure>
+            <figure>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.878828614319!2d81.50676417621668!3d26.265595777038953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399ba1580bf13c33%3A0x32df0c8e914ab52e!2sRajiv%20Gandhi%20Institute%20of%20Petroleum%20Technology%20(RGIPT)!5e0!3m2!1sen!2sin!4v1730142155014!5m2!1sen!2sin"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </figure>
         </section>
-      
+    
         <section class="contact-form">
-      
-          <h3 class="h3 form-title">Contact Form</h3>
-      
-          <form action="#" class="form" data-form>
-      
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
-      
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-      
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-      
-          </form>
-      
+            <h3 class="h3 form-title">Contact Form</h3>
+    
+            <form id="contactForm" class="form">
+                <div class="input-wrapper">
+                    <input type="text" name="fullname" class="form-input" placeholder="Full name" required>
+                    <input type="email" name="email" class="form-input" placeholder="Email address" required>
+                </div>
+    
+                <textarea name="message" class="form-input" placeholder="Your Message" required></textarea>
+    
+                <button class="form-btn" type="submit">
+                    <ion-icon name="paper-plane"></ion-icon>
+                    <span>Send Message</span>
+                </button>
+            </form>
         </section>
-      
-      </article>
-      
+    </article>
 
     </div>
 
@@ -1286,7 +1262,15 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function(){
+        emailjs.init("xi08R0Iu1mQsWO_C0"); // Replace with your actual public key
+    })();
+</script>
+<script src="assets/js/contact.js"></script>
 </body>
 
 </html>

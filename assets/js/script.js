@@ -32,6 +32,87 @@ const testimonialsModalFunc = function () {
   modalContainer.classList.toggle("active");
   overlay.classList.toggle("active");
 }
+// Select elements
+const projectItems = document.querySelectorAll('.project-item');
+const videoModal = document.getElementById('videoModal');
+const closeBtn = document.querySelector('.close-btn');
+const projectVideo = document.getElementById('projectVideo');
+
+// Function to show modal with specified video source
+function showModal(videoSrc) {
+  projectVideo.src = videoSrc; // Set the video source
+  videoModal.style.display = 'flex'; // Display the modal
+  projectVideo.play(); // Start video playback
+}
+
+// Add click event to each project item
+projectItems.forEach((item) => {
+  item.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    // Determine the video source based on the project item
+    const videoSrc = item.querySelector('img').alt === "AR Image Target" 
+    ? './assets/images/imagetarget.mp4'
+    : item.querySelector('img').alt === "Plane Detection" 
+      ? './assets/images/plane.mp4'
+      : item.querySelector('img').alt === "VR Reproductive System Exploration"
+        ? './assets/images/reproduce.mp4'
+        : item.querySelector('img').alt === "Virtual Tour"
+          ? './assets/images/virtual tour.mp4'
+          : item.querySelector('img').alt === "VR Learning Aid" 
+            ? './assets/images/crying.mp4' 
+            : item.querySelector('img').alt === "Jungle Safari" 
+              ? './assets/images/tour.mp4'
+              : item.querySelector('img').alt === "Exploring City" 
+                ? './assets/images/cityex.mp4'
+                : item.querySelector('img').alt === "VR Chemistry Lab" 
+                  ? './assets/images/chemlabvr.mp4' 
+                  : item.querySelector('img').alt === "VR mueseum" 
+                    ? './assets/images/mvr.mp4' 
+                    : item.querySelector('img').alt === "VR BIO LAB" 
+                      ? './assets/images/determine.mp4'
+                      : item.querySelector('img').alt === "VR Cultural Game" 
+                        ? './assets/images/forest.mp4' 
+                        : item.querySelector('img').alt === "Run Wild with Doozy" 
+                          ? './assets/images/cusmat.mp4' 
+                          : item.querySelector('img').alt === "Obstacle game" 
+                            ? './assets/images/obstacless.mp4' 
+                            : item.querySelector('img').alt === "OpenCv hand interaction" // Updated condition
+                              ? './assets/images/Hand gesture.mp4' // Video for OpenCv hand interaction
+                              : './assets/images/selenium.mp4'; // Fallback option
+  
+  showModal(videoSrc);
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  });
+});
+
+// Hide modal and stop video on close button click
+closeBtn.addEventListener('click', () => {
+  videoModal.style.display = 'none';
+  projectVideo.pause();
+  projectVideo.currentTime = 0; // Reset video
+  projectVideo.removeAttribute('src'); // Remove the source to stop playback
+});
+
+// Hide modal when clicking outside the video content
+window.addEventListener('click', (event) => {
+  if (event.target === videoModal) {
+    videoModal.style.display = 'none';
+    projectVideo.pause();
+    projectVideo.currentTime = 0;
+    projectVideo.removeAttribute('src'); // Remove the source to stop playback
+  }
+});
+
+
 
 // add click event to all modal items
 for (let i = 0; i < testimonialsItem.length; i++) {
